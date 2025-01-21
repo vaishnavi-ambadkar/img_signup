@@ -152,7 +152,7 @@ const app = express();
 // Middleware
 app.use(cors(
   {
-  origin:[" "],
+  origin:["https://img-signup-frontend.vercel.app"],
   methods: ["POST","GET"],
   credentials: true
   }
