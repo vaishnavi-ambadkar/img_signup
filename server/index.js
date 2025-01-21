@@ -173,10 +173,7 @@ mongoose
     "mongodb+srv://ambadkarvaishnavi667:Sunitaambadkar@signup.q9zwd.mongodb.net/logindb?retryWrites=true&w=majority&appName=signup",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
-  app.get("/",(req,res) => 
-    {
-      res.json("Hi");
-    })
+  
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
@@ -190,7 +187,10 @@ const EmployeeSchema = new mongoose.Schema({
 });
 
 const EmployeeModel = mongoose.model("Employee", EmployeeSchema);
-
+app.get("/",(req,res) => 
+    {
+      res.json("Hi");
+    })
 // Routes
 
 // Login Endpoint
