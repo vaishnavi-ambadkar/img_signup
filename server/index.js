@@ -150,7 +150,13 @@ const cloudinary = require("cloudinary").v2;
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors(
+  {
+  origin:[" "],
+  methods: ["POST","GET"],
+  credentials: true
+  }
+));
 app.use(express.json());
 app.use(fileUpload({ useTempFiles: true, tempFileDir: "/tmp/" }));
 
@@ -167,6 +173,10 @@ mongoose
     "mongodb+srv://ambadkarvaishnavi667:Sunitaambadkar@signup.q9zwd.mongodb.net/logindb?retryWrites=true&w=majority&appName=signup",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
+  app.get("/",(req,res) => 
+    {
+      res.json("Hi");
+    })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
